@@ -1,0 +1,135 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.progress {
+  border: 1px solid black;
+  overflow: hidden;
+  height: 10px;
+  padding: 3px;
+  width: 50vh;
+}
+.progress__bar {
+  transform-origin: 0%;
+  transform: scaleX(0);
+  transition: transform 2s cubic-bezier(0.32, 0, 0.07, 1);
+}
+
+.progress__bar {
+  background-color: teal;
+  height: 100%;
+}
+
+.btn {
+  margin-top: 10vh;
+  text-align: center;
+  background-color: black;
+  border-radius: 20px;
+  color: white;
+  width: 20vh;
+  margin-bottom: 5vh;
+  cursor: progress;
+  padding: 1rem;
+  transition: background-color 0.5s;
+  background-color: #15dea5;
+  border-radius: 2rem;
+}
+.btn:hover {
+  background-color: #13c794;
+}
+.btn:active + .progress > .progress__bar {
+  transform: scaleX(1);
+}
+
+.btn {
+  perspective: 500px;
+}
+.btn:active > .btn__flip {
+  transform: rotateX(-90deg);
+}
+.btn__flip {
+  transform-style: preserve-3d;
+  transform-origin: center bottom 7.5vw;
+  transition: transform 500ms cubic-bezier(0.7, 0, 0.23, 1);
+}
+.btn__flip--off {
+  transform: rotateX(0deg) translateZ(7.5vw);
+}
+.btn__flip--on {
+  transform: rotateX(90deg) translateZ(7.5vw);
+}
+
+.button3d {
+  margin: 20vh auto;
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column-reverse;
+}
+.button3d .btn3d {
+  color: white;
+  font-size: 3.5rem;
+  cursor: pointer;
+  position: relative;
+  width: 25vw;
+  height: 7.5vw;
+  perspective: 500px;
+}
+.button3d .btn3d:active > .btn__flip {
+  transform: rotateX(-90deg);
+}
+.button3d .btn3d .btn__flip {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  transform-origin: center bottom 3.75vw;
+  transition: transform 500ms cubic-bezier(0.7, 0.01, 0.23, 0.99);
+  transform: rotateX(0deg);
+}
+.button3d .btn3d .btn__flip .btn__flip--off {
+  transform: rotateX(0deg) translateZ(3.75vw);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ee6352;
+}
+.button3d .btn3d .btn__flip .btn__flip--on {
+  transform: rotateX(90deg) translateZ(3.75vw);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #59cd90;
+}/*# sourceMappingURL=4.css.map */

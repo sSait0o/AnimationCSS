@@ -1,0 +1,49 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  text-align: center;
+  background: #ff5a5f;
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 1.85rem 3rem;
+  border-radius: 10rem;
+}
+.btn:active ~ .animation {
+  transform: perspective(80px) rotateZ(1turn) rotateX(75deg) scale(3);
+}
+.btn:active ~ .animation span {
+  transform: translateY(0);
+}
+
+.animation {
+  transition: transform 1500ms ease-in-out;
+}
+
+.ball {
+  margin-top: 20vh;
+  width: 3rem;
+  height: 3rem;
+  background: #00a699;
+  margin-bottom: 1rem;
+  border-radius: 100px;
+}
+
+.box {
+  margin-top: 20vh;
+  width: 3rem;
+  height: 3rem;
+  overflow: hidden;
+  background-color: #00a699;
+}
+.box span {
+  transform: translateY(250%);
+  transition: transform 1000ms ease-out 50ms;
+  display: inline-block;
+}
+
+span {
+  width: 100%;
+}/*# sourceMappingURL=3.css.map */

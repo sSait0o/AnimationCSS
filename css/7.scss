@@ -1,0 +1,114 @@
+$cd-bars: #15dea5;
+$size: 3vh;
+$anim-dur: 1000ms;
+$cd-bars-inv: #0e397f;
+$anim-delay: $anim-dur / 5;
+
+@keyframes bars {
+  0% {
+    transform: scaleY(0.5);
+  }
+
+  100% {
+    transform: scaleY(1.5);
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.load {
+  width: $size * 10;
+  height: $size * 7.5;
+  display: flex;
+  justify-content: space-evenly;
+  &__bar {
+    background-color: $cd-bars;
+    height: 100%;
+    width: $size;
+    animation: bars $anim-dur backwards infinite ease-in-out alternate;
+    @for $i from 1 through 5 {
+      &--#{ $i } {
+        animation-delay: $anim-delay * $i;
+      }
+      &--#{$i}-inv {
+        animation-delay: $anim-delay * $i;
+        animation-direction: alternate-reverse;
+        background-color: $cd-bars-inv;
+      }
+    }
+  }
+}
+
+.load__bar--1 {
+  animation-delay: 200ms;
+}
+.load__bar--1-inv {
+  animation-delay: 200ms;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: forwards;
+  background: #0e397f;
+}
+.load__bar--2 {
+  animation-delay: 400ms;
+}
+.load__bar--2-inv {
+  animation-delay: 400ms;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: forwards;
+  background: #0e397f;
+}
+
+.load__bar--3 {
+  animation-delay: 600ms;
+}
+.load__bar--3-inv {
+  animation-delay: 600ms;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: forwards;
+  background: #0e397f;
+}
+
+.load__bar--4 {
+  animation-delay: 800ms;
+}
+.load__bar--4-inv {
+  animation-delay: 800ms;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: forwards;
+  background: #0e397f;
+}
+
+.load__bar--5 {
+  animation-delay: 1000ms;
+}
+.load__bar--5-inv {
+  animation-delay: 1000ms;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: forwards;
+  background: #0e397f;
+}
+
+.spin {
+  margin-top: 10vh;
+  background-color: #15dea5;
+  width: 30vh;
+  height: 30vh;
+  animation: spin 3s linear infinite paused;
+  &:hover {
+    animation-play-state: running;
+    cursor: pointer;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

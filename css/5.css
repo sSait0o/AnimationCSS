@@ -1,0 +1,39 @@
+.btn {
+  border-radius: 2rem;
+  background-color: #15dea5;
+  position: relative;
+  z-index: 1;
+}
+.btn:hover::after {
+  opacity: 1;
+}
+.btn:hover + .img::before {
+  opacity: 0;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: radial-gradient(circle, #22eab1 0%, #11af82 100%);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms;
+}
+
+.img {
+  z-index: -1;
+}
+.img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 2rem;
+  background: #15dea5;
+  z-index: 1;
+}/*# sourceMappingURL=5.css.map */

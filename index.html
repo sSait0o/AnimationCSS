@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="../Animation/css/style.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="index.html">Première page</a>
+    <a href="html/1.html">Page 1</a>
+    <a href="html/2.html">Page 2</a>
+    <a href="html/3.html">Page 3</a>
+    <a href="html/4.html">Page 4</a>
+
+    <div class="container">
+      <div class="btn">Vois comme je grandis !</div>
+    </div>
+
+    <form action="/submit-page" method="post">
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="nom" required /><br /><br />
+
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email" required /><br /><br />
+
+      <label for="message">Message :</label><br />
+      <textarea
+        id="message"
+        name="message"
+        rows="4"
+        cols="50"
+        required
+      ></textarea
+      ><br /><br />
+
+      <input type="submit" value="Envoyer" />
+
+      <div class="ball"></div>
+    </form>
+  </body>
+</html>

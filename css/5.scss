@@ -1,0 +1,47 @@
+$border-rad: 2rem;
+$clr-primary: #15dea5;
+@mixin pseudo-elem {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.btn {
+  border-radius: $border-rad;
+  background-color: $clr-primary;
+  position: relative;
+  z-index: 1;
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+    & + .img {
+      &::before {
+        opacity: 0;
+      }
+    }
+  }
+  &::after {
+    @include pseudo-elem;
+    background: radial-gradient(
+      circle,
+      lighten($clr-primary, 5) 0%,
+      darken($clr-primary, 10) 100%
+    );
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 250ms;
+  }
+}
+
+.img {
+  z-index: -1;
+  &::before {
+    @include pseudo-elem;
+    border-radius: $border-rad;
+    background: $clr-primary;
+    z-index: 1;
+  }
+}
